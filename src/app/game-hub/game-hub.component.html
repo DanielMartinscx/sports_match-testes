@@ -38,7 +38,10 @@
                     </ng-container>
                     
                 </form>
-                <button (click)="participar(game.openGameId)">Participar</button>
+                <div class="btnareagamehub">
+                    <button (click)="participar(game.openGameId)">Participar</button>
+                    <button (click)="desinscrever(game.openGameId)">Sair</button>
+                </div>
             </div>
         </div>
     </div>

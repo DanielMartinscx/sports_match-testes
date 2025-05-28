@@ -24,5 +24,9 @@ export class GameHubServiceService {
   participate(userId: number, position: number, opengameId: number): Observable<any> {
     return this.http.post(this.apiUrl + `open-game/participar/${userId}/${opengameId}/${position}`, null)
   }
+
+  desinscrever(userId:number, opengameId:number): Observable<any> {
+    return this.http.delete(this.apiUrl + `open-game/desinscrever/${userId}/${opengameId}`)
+  }
   
 }

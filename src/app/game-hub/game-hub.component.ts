@@ -150,4 +150,26 @@ export class GameHubComponent implements OnInit{
     )
   }
 
+  desinscrever(openGameId: number) : void {
+    this.service.desinscrever(Number(localStorage.getItem("@userId")), openGameId).subscribe(
+      response => {
+        Swal.fire({
+          title: 'Sucesso!',
+          text: "Você não participa mais desse jogo!",
+          icon: 'success',
+          confirmButtonText: 'Ok'}
+        )
+      },
+      error => {
+        //alert(error.error.message)
+        Swal.fire({
+          title: 'Alerta!',
+          text: error.error.message,
+          icon: 'info',
+          confirmButtonText: 'Ok'}
+        )
+      }
+    )
+  }
+
 }
